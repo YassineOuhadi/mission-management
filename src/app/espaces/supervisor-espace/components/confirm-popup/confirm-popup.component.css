@@ -1,0 +1,72 @@
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  *:not(mat-icon) {
+    font-family: Lato, Helvetica, Arial, sans-serif !important;
+    font-style: normal;
+  }
+
+  *,
+  ::after,
+  ::before {
+    box-sizing: border-box;
+  }
+
+  p {
+    font-size: 14px;
+    margin: 5px;
+  }
+
+  button {
+    padding: 0px 10px;
+  }
+
+  .center-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+  }
+
+  .box header {
+    padding: 20px 24px !important;
+    height: 50px;
+    background: #3a3632;
+    display: flex;
+    justify-content: space-between;
+    animation: slideToTop 0.5s forwards;
+    align-items: center;
+    width: 100%;
+    position: sticky;
+    top: 0;
+    z-index: 2;
+  }
+
+  .box header .title {
+    font-size: 16px;
+    font-weight: 500;
+    color: #fff;
+    height: fit-content;
+  }
+
+  section {
+    padding: 10px 14px 10px 16px;
+    background: transparent;
+    min-height: 100px;
+    overflow: auto;
+  }
+
+  .mat-dialog-content {
+    overflow: hidden !important;
+  }
+
+  .mat-mdc-card-content {
+    padding-top: 0px !important;
+    padding-bottom: 0px !important;
+  }
+
+  .mdc-dialog__content {
+    padding: 0px !important;
+  }

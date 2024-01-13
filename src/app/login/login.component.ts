@@ -1,43 +1,69 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr'
-import { AuthService } from '../service/auth.service';
+import { AuthService } from '../auth-service/auth.service';
+import { UserType } from '../auth-service/model/enum/UserType';
 
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css']
 })
-export class LoginComponent {
-  constructor(private builder: FormBuilder, private toastr: ToastrService, private service: AuthService,
-    private router: Router) {
-      sessionStorage.clear();
 
-  }
+export class LoginComponent implements OnInit{
+
   result: any;
 
+  constructor(
+    private builder: FormBuilder,
+    private toastr: ToastrService,
+    private authService: AuthService,
+    private router: Router) {
+  }
+
+  ngOnInit(): void {
+    if (this.authService.isloggedin()) {
+      this.authService.validateToken().toPromise()
+        .then((response: any) => {
+          if (response.isValid) {
+            const userRole = this.authService.getUserTypeFromCookie();
+            if (userRole === 'PROFESSOR') {
+              this.router.navigate(['/professor']);
+            } else if (userRole === 'SUPERVISOR') {
+              this.router.navigate(['/supervisor']);
+            } else if (userRole === 'REGISTRAR') {
+              this.router.navigate(['/registrar']);
+            } else {
+              this.router.navigate(['login']);
+            }
+          }
+        })
+    }
+  }
+
   loginform = this.builder.group({
-    id: this.builder.control('', Validators.required),
+    email: this.builder.control('', Validators.required),
     password: this.builder.control('', Validators.required)
   });
 
-  proceedlogin() {
+  proceedlogin(): void {
     if (this.loginform.valid) {
-      this.service.GetUserbyCode(this.loginform.value.id).subscribe(item => {
-        this.result = item;
-        if (this.result.password === this.loginform.value.password) {
-          if (this.result.isactive) {
-            sessionStorage.setItem('username',this.result.id);
-            sessionStorage.setItem('role',this.result.role);
-            this.router.navigate(['']);
+      this.authService.login(this.loginform.value.email!, this.loginform.value.password!).subscribe(
+        (response: any) => {
+          this.authService.setTokenInCookie(response.jwt);
+          this.authService.setUserTypeInCookie(response.userType);
+          const espace: UserType = response.userType as UserType;
+          this.router.navigate([espace.toString().toLowerCase()]);
+        },
+        (error) => {
+          if (error.status === 400) {
+            this.toastr.error(error ? error.error : 'Invalid credentials');
           } else {
-            this.toastr.error('Please contact Admin', 'InActive User');
+            this.toastr.error('Error during login');
           }
-        } else {
-          this.toastr.error('Invalid credentials');
         }
-      });
+      );
     } else {
       this.toastr.warning('Please enter valid data.')
     }

@@ -1,0 +1,91 @@
+td.state {
+  text-align: center;
+}
+
+td.state button {
+  width: 100%;
+}
+
+span {
+  display: flex;
+  align-items: center;
+}
+
+.approved {
+  padding: 10px 0px;
+}
+
+.approved-label {
+  background-color: #0080000a;
+  color: #008000bd;
+  border: 1px solid #0080000d;
+  margin-bottom: 10px !important;
+}
+
+.rejected-label {
+  background-color: #ff00000a;
+  color: #e14c4c;
+  border: 1px solid #ff000005;
+}
+
+.approved-label,
+.rejected-label {
+  display: inline-block;
+  padding: 5px 10px;
+  border-radius: 4px;
+  text-align: center;
+  margin: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.report-icon {
+  cursor: pointer;
+  margin-left: 5px;
+}
+
+.approved-label:hover .report-icon {
+  display: inline-block;
+}
+
+.pdf-icon {
+  font-size: 24px;
+  /* Adjust the icon size as needed */
+  margin-right: 5px;
+}
+
+.pdf-name {
+  cursor: pointer;
+}
+
+.pdf-name:hover {
+  text-decoration: underline;
+}
+
+.update-icon,
+.delete-icon {
+  cursor: pointer;
+  font-size: 24px;
+  margin-right: 10px;
+}
+
+.update-icon:hover,
+.delete-icon:hover {
+  color: #007bff;
+}
+
+.button-container {
+  padding: 10px 0px;
+  margin: 5px;
+}
+
+button[mat-stroked-button][color="primary"] {
+  background-color: #1976d2;
+  color: white;
+}
+
+button[mat-stroked-button][color="warn"] {
+  background-color: #f44336;
+  color: white;
+}

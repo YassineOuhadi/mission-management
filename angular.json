@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "authentication": {
+    "mission-management": {
       "projectType": "application",
       "schematics": {},
       "root": "",
@@ -13,7 +13,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/authentication",
+            "outputPath": "dist/mission-management",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": [
@@ -60,12 +60,17 @@
         },
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "browserTarget": "mission-management:build",
+            "port": 4200,
+            "host": "localhost"
+          },
           "configurations": {
             "production": {
-              "browserTarget": "authentication:build:production"
+              "browserTarget": "mission-management:build:production"
             },
             "development": {
-              "browserTarget": "authentication:build:development"
+              "browserTarget": "mission-management:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -73,7 +78,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "authentication:build"
+            "browserTarget": "mission-management:build"
           }
         },
         "test": {
@@ -97,5 +102,8 @@
         }
       }
     }
+  },
+  "cli": {
+    "analytics": "a6294a96-22ad-4b08-80d1-0af231b04d29"
   }
 }

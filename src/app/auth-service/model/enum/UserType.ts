@@ -1,0 +1,5 @@
+export enum UserType {
+  PROFESSOR = "PROFESSOR",
+  SUPERVISOR = "SUPERVISOR",
+  REGISTRAR = "REGISTRAR",
+}

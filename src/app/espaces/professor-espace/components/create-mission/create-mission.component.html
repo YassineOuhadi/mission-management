@@ -1,0 +1,61 @@
+<div class="center-container">
+  <div mat-dialog-content class="flex-container">
+    <div class="card-container">
+      <mat-card class="shadow-md box p-0">
+        <mat-card-content>
+          <header>
+            <div class="title">Edit mission request</div>
+            <mat-icon class="close-icon" (click)="closeDialog()" style="color: white;cursor: pointer;">close</mat-icon>
+          </header>
+          <section>
+            <mat-dialog-content>
+              <!-- <p></p> -->
+              <form class="example-form" [formGroup]="loginform">
+
+                <mat-form-field class="example-full-width">
+                  <mat-label>Title</mat-label>
+                  <input matInput formControlName="title" [(ngModel)]="missionRequest.missionTitle">
+                </mat-form-field>
+
+                <mat-form-field class="example-full-width">
+                  <mat-label>Description</mat-label>
+                  <input matInput formControlName="description" [(ngModel)]="missionRequest.missionDescription">
+                </mat-form-field>
+
+
+                <mat-form-field class="example-full-width">
+                  <mat-label>Start Date</mat-label>
+                  <input matInput [matDatepicker]="startDatePicker" formControlName="startDate"
+                    [(ngModel)]="missionRequest.missionStartDate">
+                  <mat-datepicker-toggle matSuffix [for]="startDatePicker"></mat-datepicker-toggle>
+                  <mat-datepicker #startDatePicker></mat-datepicker>
+                </mat-form-field>
+
+                <mat-form-field class="example-full-width">
+                  <mat-label>End Date</mat-label>
+                  <input matInput [matDatepicker]="endDatePicker" formControlName="endDate"
+                    [(ngModel)]="missionRequest.missionEndDate">
+                  <mat-datepicker-toggle matSuffix [for]="endDatePicker"></mat-datepicker-toggle>
+                  <mat-datepicker #endDatePicker></mat-datepicker>
+                </mat-form-field>
+
+                <mat-form-field class="example-full-width">
+                  <mat-label>Destination</mat-label>
+                  <input matInput formControlName="destination" [(ngModel)]="missionRequest.destination">
+                </mat-form-field>
+
+              </form>
+            </mat-dialog-content>
+            <mat-dialog-actions>
+              <button mat-stroked-button mat-dialog-close color="primary" class="p-4">Cancel</button>
+              <button mat-stroked-button [mat-dialog-close]="{ confirmed: true, missionRequest: missionRequest }"
+                color="warn">
+                Confirm
+              </button>
+            </mat-dialog-actions>
+          </section>
+        </mat-card-content>
+      </mat-card>
+    </div>
+  </div>
+</div>

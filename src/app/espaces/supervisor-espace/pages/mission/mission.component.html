@@ -1,0 +1,113 @@
+<mat-card>
+  <mat-card-header class="header">
+    <h2 style="flex:1;">Missions Requests Listing</h2>
+  </mat-card-header>
+  <mat-card-content>
+
+    <div class="mat-elevation-z8">
+      <table mat-table matSort [dataSource]="dataSource">
+
+        <!-- Name Column -->
+        <ng-container matColumnDef="id">
+          <th mat-header-cell mat-sort-header *matHeaderCellDef> Request ID </th>
+          <td mat-cell *matCellDef="let element"> {{element.id}} </td>
+        </ng-container>
+
+        <!-- Name Column -->
+        <ng-container matColumnDef="missionTitle">
+          <th mat-header-cell mat-sort-header *matHeaderCellDef> Title </th>
+          <td mat-cell *matCellDef="let element"> {{element.missionTitle}} </td>
+        </ng-container>
+
+        <!-- Name Column -->
+        <ng-container matColumnDef="professorFullName">
+          <th mat-header-cell mat-sort-header *matHeaderCellDef> professorFullName </th>
+          <td mat-cell *matCellDef="let element"> {{element.professorFullName}} </td>
+        </ng-container>
+
+        <!-- Weight Column -->
+        <ng-container matColumnDef="missionDescription">
+          <th mat-header-cell mat-sort-header *matHeaderCellDef> Description </th>
+          <td mat-cell *matCellDef="let element"> {{element.missionDescription}} </td>
+        </ng-container>
+
+        <!-- Weight Column -->
+        <ng-container matColumnDef="destination">
+          <th mat-header-cell mat-sort-header *matHeaderCellDef> Destination </th>
+          <td mat-cell *matCellDef="let element"> Rabat </td>
+        </ng-container>
+
+        <!-- Weight Column -->
+        <ng-container matColumnDef="missionStartDate">
+          <th mat-header-cell mat-sort-header *matHeaderCellDef> Start Date </th>
+          <td mat-cell *matCellDef="let element"> {{element.missionStartDate | date:'medium'}} </td>
+        </ng-container>
+
+        <!-- Weight Column -->
+        <ng-container matColumnDef="missionEndDate">
+          <th mat-header-cell mat-sort-header *matHeaderCellDef> End Date </th>
+          <td mat-cell *matCellDef="let element"> {{element.missionEndDate | date:'medium'}} </td>
+        </ng-container>
+
+        <!-- State Column -->
+        <ng-container matColumnDef="state">
+          <th mat-header-cell *matHeaderCellDef> State </th>
+          <td mat-cell *matCellDef="let element" class="state">
+
+
+            <ng-container *ngIf="element.state === 'CREATED'; else state">
+              <div class="button-container">
+                <mat-button-toggle-group name="stateToggle">
+                  <mat-button-toggle value="APPROVED" mat-stroked-button color="primary" (click)="approveMissionRequest(element.id)">
+                    Approve
+                  </mat-button-toggle>
+                  <mat-button-toggle value="REJECTED" mat-stroked-button color="warn" (click)="rejectMissionRequest(element.id)">
+                    Reject
+                  </mat-button-toggle>
+                </mat-button-toggle-group>
+            </div>
+            </ng-container>
+
+
+            <ng-template #state>
+              <div class="approved" *ngIf="element.state === 'APPROVED';">
+                <span class="approved-label" matTooltip="Open Report">
+                  Approved
+                </span>
+                <span>
+                  <mat-icon class="pdf-icon">picture_as_pdf</mat-icon>
+                  <span class="pdf-name" *ngIf="element.missionOrder; else pending">
+                    {{element.missionOrder}}
+                  </span>
+                  <ng-template #pending>
+                    Pending ..
+                  </ng-template>
+                </span>
+              </div>
+              <span *ngIf="element.state === 'REJECTED';" class="rejected-label">
+                Rejected
+              </span>
+              <span *ngIf="element.state === 'CANCELLED';" class="rejected-label">
+                Cancelled
+              </span>
+            </ng-template>
+
+
+          </td>
+        </ng-container>
+
+        <!-- Request Date Column -->
+        <ng-container matColumnDef="requestDate">
+          <th mat-header-cell mat-sort-header *matHeaderCellDef> Request Date </th>
+          <td mat-cell *matCellDef="let element"> {{element.requestDate | date:'medium'}} </td>
+        </ng-container>
+
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+      </table>
+
+      <mat-paginator [pageSizeOptions]="[10, 20]" showFirstLastButtons aria-label="Select page of periodic elements">
+      </mat-paginator>
+    </div>
+  </mat-card-content>
+</mat-card>

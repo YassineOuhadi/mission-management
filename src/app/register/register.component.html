@@ -1,35 +1,44 @@
-<mat-card>
-    <mat-card-header>
-        <h2>Registeration</h2>
-    </mat-card-header>
-    <mat-card-content>
+<div class="wrapper">
+  <div class="center-container">
+    <mat-card>
+      <mat-card-header>
+        <h2>Registration</h2>
+      </mat-card-header>
+      <mat-card-content>
         <form class="example-form" [formGroup]="registerform" (ngSubmit)="proceedregister()">
-            <mat-form-field class="example-full-width">
-              <mat-label>Username</mat-label>
-              <input matInput formControlName="id" >
-            </mat-form-field>
-            <mat-form-field class="example-full-width">
-                <mat-label>Name</mat-label>
-                <input matInput formControlName="name" >
-              </mat-form-field>
-              <mat-form-field class="example-full-width">
-                <mat-label>Password</mat-label>
-                <input type="password" matInput formControlName="password" >
-              </mat-form-field>
-              <mat-form-field class="example-full-width">
-                <mat-label>Email</mat-label>
-                <input matInput formControlName="email" >
-              </mat-form-field>
-              <mat-radio-group formControlName="gender" aria-label="Select an option">
-                <mat-radio-button value="male">Male</mat-radio-button>
-                <mat-radio-button value="female">Female</mat-radio-button>
-              </mat-radio-group>
-              <div>
-                <button mat-raised-button color="primary">Submit</button>
-                <a routerLink="/login" mat-raised-button color="accent">Back to Login</a>
-              </div>
-          </form>
-    </mat-card-content>
-  </mat-card>
-
-
+          <mat-form-field class="example-full-width">
+            <mat-label>Email</mat-label>
+            <input matInput formControlName="email">
+            <mat-error *ngIf="registerform.get('email')?.hasError('email') && registerform.get('email')?.touched">Invalid email format</mat-error>
+          </mat-form-field>
+          <mat-form-field class="example-full-width">
+            <mat-label>Username</mat-label>
+            <input matInput formControlName="username">
+            <mat-error *ngIf="registerform.get('username')?.hasError('minlength') && registerform.get('username')?.touched">Username must be at least 5 characters</mat-error>
+          </mat-form-field>
+          <mat-form-field class="example-full-width">
+            <mat-label>Password</mat-label>
+            <input type="password" matInput formControlName="password">
+            <mat-error *ngIf="registerform.get('password')?.hasError('required') && registerform.get('password')?.touched">Password is required</mat-error>
+          </mat-form-field>
+          <mat-form-field class="example-full-width">
+            <mat-label>User Type</mat-label>
+            <mat-select formControlName="userType">
+              <mat-option *ngFor="let type of userTypes" [value]="type">{{ type }}</mat-option>
+            </mat-select>
+            <mat-error *ngIf="registerform.get('userType')?.hasError('required') && registerform.get('userType')?.touched">User Type is required</mat-error>
+          </mat-form-field>
+          <mat-form-field class="example-full-width">
+            <mat-label>Phone</mat-label>
+            <input matInput formControlName="phone">
+            <mat-error *ngIf="registerform.get('phone')?.hasError('pattern') && registerform.get('phone')?.touched">Invalid phone number format</mat-error>
+          </mat-form-field>
+          <div class="actions">
+            <button routerLink="/login" mat-raised-button class="button">Back to Login</button>
+            <button mat-raised-button color="primary">Submit</button>
+          </div>
+        </form>
+      </mat-card-content>
+    </mat-card>
+  </div>
+</div>

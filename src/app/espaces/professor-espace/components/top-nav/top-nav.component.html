@@ -1,0 +1,17 @@
+<!-- professor-toolbar.component.html -->
+<div class="toolbar" role="banner">
+  <h2>Professor Espace</h2>
+
+  <a routerLink="/professor">Home</a>
+
+  <a routerLink="/professor/mission">Mission Requests</a>
+
+  <a routerLink="/professor/reimbursement">Reimbursement Requests</a>
+
+  <div class="spacer"></div>
+
+  <button class="logout-button" (click)="logout()">
+    <mat-icon class="logo">exit_to_app</mat-icon>
+    Logout
+  </button>
+</div>

@@ -1,0 +1,22 @@
+.wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background-color: #031A2B;
+}
+
+.center-container {
+  text-align: center;
+  min-width: 40%;
+  max-width: 600px;
+}
+
+.actions {
+  text-align: right;
+}
+
+.button {
+  background-color: #607D8B !important;
+  color: white !important;
+}

@@ -1,0 +1,70 @@
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 8px 0;
+}
+
+h2 {
+  margin: 0px 20px;
+  text-transform: capitalize;
+  font-size: larger;
+  font-weight: 400;
+}
+
+p {
+  margin: 0;
+}
+
+a {
+  cursor: pointer;
+  font-weight: 400;
+}
+
+.spacer {
+  flex: 1;
+}
+
+.toolbar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  background-color: #031A2B;
+  color: white;
+  font-weight: 600;
+  padding: 0px 20px;
+}
+
+a,
+a:visited,
+a:hover {
+  color: #f2f2f2;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #f2f2f2;
+}
+
+.logout-button {
+  display: flex;
+  align-items: center;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #fff;
+}
+
+.logout-button:hover {
+  color: #f2f2f2;
+}
+
+.logo {
+  margin-right: 8px;
+}

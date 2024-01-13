@@ -1,0 +1,27 @@
+<div class="center-container">
+  <div mat-dialog-content class="flex-container">
+    <div class="card-container">
+      <mat-card class="shadow-md box p-0">
+        <mat-card-content>
+          <header>
+            <div class="title">Cancel mission request</div>
+            <mat-icon class="close-icon" (click)="closeDialog()" style="color: white;cursor: pointer;">close</mat-icon>
+          </header>
+          <section>
+            <mat-dialog-content>
+              <p>Are you sure you want cancel this mission request</p>
+            </mat-dialog-content>
+            <mat-dialog-actions>
+              <button mat-stroked-button mat-dialog-close color="primary" class="p-4">Cancel</button>
+              <button mat-stroked-button
+                [mat-dialog-close]="{ confirmed: true }"
+                color="warn">
+                Confirm
+              </button>
+            </mat-dialog-actions>
+          </section>
+        </mat-card-content>
+      </mat-card>
+    </div>
+  </div>
+</div>

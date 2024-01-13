@@ -1,131 +1,247 @@
 {
-  "user": [
+  "missionrequests": [
     {
-      "id": "admin",
-      "name": "NT Infotech",
-      "password": "Test$1234",
-      "email": "test@gmail.com",
-      "gender": "male",
-      "role": "admin",
-      "isactive": true,
-      "address":{
-        "area":"chennai"
-      }
+      "id": 1,
+      "userId": 1,
+      "title": "Mission 1",
+      "description": "Mission for the next week",
+      "state": "CREATED",
+      "startDate": "2024-01-15T08:00:00Z",
+      "endDate": "2024-01-20T18:00:00Z",
+      "requestDate": "2024-01-20T18:00:00Z",
+      "destination": "Agadir"
     },
     {
-      "id": "testuser",
-      "name": "Test User",
-      "password": "Test@1234",
-      "email": "test@in.com",
-      "gender": "male",
-      "role": "user",
-      "isactive": true,
-      "address":{
-        "area":"chennai"
-      }
+      "id": 2,
+      "userId": 1,
+      "title": "Mission 2",
+      "description": "Another mission description",
+      "state": "APPROVED",
+      "startDate": "2024-01-21T09:00:00Z",
+      "endDate": "2024-01-25T17:00:00Z",
+      "requestDate": "2024-01-20T18:00:00Z",
+      "destination": "Casablanca",
+      "missionOrder" : "missionorder.pdf"
     },
     {
-      "id": "Jhon1",
-      "name": "NT Infotech",
-      "password": "Test@1233",
-      "email": "te@in.com",
-      "gender": "male",
-      "role": "tech",
-      "isactive": true,
-      "address":{
-        "area":"chennai"
-      }
+      "id": 3,
+      "userId": 1,
+      "title": "Mission 3",
+      "description": "Mission in Marrakech",
+      "state": "REJECTED",
+      "startDate": "2024-02-01T08:30:00Z",
+      "requestDate": "2024-01-20T18:00:00Z",
+      "endDate": "2024-02-05T16:30:00Z",
+      "destination": "Marrakech"
     },
     {
-      "id": "ntuser",
-      "name": "ramesh",
-      "password": "Test@1234",
-      "email": "te@in.com",
-      "gender": "male",
-      "role": "tech",
-      "isactive": true,
-      "address":{
-        "area":"banglore"
-      }
-    }
-  ],
-  "role": [
-    {
-      "code": "user",
-      "name": "User"
+      "id": 4,
+      "userId": 1,
+      "title": "Mission 4",
+      "description": "Testing Mission",
+      "state": "REJECTED",
+      "startDate": "2024-02-10T10:00:00Z",
+      "requestDate": "2024-01-20T18:00:00Z",
+      "endDate": "2024-02-15T20:00:00Z",
+      "destination": "Rabat"
     },
     {
-      "code": "tech",
-      "name": "Technician"
-    }
-  ],
-  "menu": [
-    {
-      "code": "user",
-      "name": "User"
+      "id": 5,
+      "userId": 1,
+      "title": "Mission 5",
+      "description": "Business Trip",
+      "state": "CANCELED",
+      "startDate": "2024-02-20T08:00:00Z",
+      "requestDate": "2024-01-20T18:00:00Z",
+      "endDate": "2024-02-25T18:00:00Z",
+      "destination": "Tangier"
     },
     {
-      "code": "customer",
-      "name": "Customer"
-    }
-  ],
-  "roleaccess": [
-    {
-      "role": "admin",
-      "menu": "user",
-      "haveedit":true,
-      "haveadd":true,
-      "havedelete":true
+      "id": 6,
+      "userId": 1,
+      "title": "Mission 6",
+      "description": "Exploration Mission",
+      "state": "CANCELED",
+      "startDate": "2024-03-01T09:30:00Z",
+      "requestDate": "2024-01-20T18:00:00Z",
+      "endDate": "2024-03-05T17:30:00Z",
+      "destination": "Fes"
     },
     {
-      "role": "admin",
-      "menu": "customer",
-      "haveedit":true,
-      "haveadd":true,
-      "havedelete":true
+      "id": 7,
+      "userId": 1,
+      "title": "Mission 7",
+      "description": "Mission for Product Launch",
+      "state": "REJECTED",
+      "startDate": "2024-03-10T08:00:00Z",
+      "requestDate": "2024-01-20T18:00:00Z",
+      "endDate": "2024-03-15T18:00:00Z",
+      "destination": "Essaouira"
     },
     {
-      "role": "user",
-      "menu": "user",
-      "haveedit":false,
-      "haveadd":false,
-      "havedelete":false
+      "id": 8,
+      "userId": 1,
+      "title": "Mission 8",
+      "description": "Research Mission",
+      "state": "REJECTED",
+      "startDate": "2024-03-20T10:00:00Z",
+      "requestDate": "2024-01-20T18:00:00Z",
+      "endDate": "2024-03-25T20:00:00Z",
+      "destination": "Ouarzazate"
     },
     {
-      "role": "user",
-      "menu": "customer",
-      "haveedit":true,
-      "haveadd":true,
-      "havedelete":false
-    }
-    
-    
-  ],
-  "customer":[
-    {
-      "id":1,
-      "name":"rakhesh",
-      "Creditlimit":1000
+      "id": 9,
+      "userId": 1,
+      "title": "Mission 9",
+      "description": "Mission in the Sahara",
+      "state": "REJECTED",
+      "startDate": "2024-04-01T08:30:00Z",
+      "requestDate": "2024-01-20T18:00:00Z",
+      "endDate": "2024-04-05T16:30:00Z",
+      "destination": "Sahara Desert"
     },
     {
-      "id":2,
-      "name":"rahul",
-      "Creditlimit":1000
+      "id": 10,
+      "userId": 1,
+      "title": "Mission 10",
+      "description": "Educational Mission",
+      "state": "REJECTED",
+      "startDate": "2024-04-10T09:00:00Z",
+      "requestDate": "2024-01-20T18:00:00Z",
+      "endDate": "2024-04-15T17:00:00Z",
+      "destination": "Chefchaouen"
     },
     {
-      "id":3,
-      "name":"ramesh",
-      "Creditlimit":1000
+      "id": 11,
+      "userId": 1,
+      "title": "Mission 11",
+      "description": "Technology Mission",
+      "state": "REJECTED",
+      "startDate": "2024-04-20T08:00:00Z",
+      "requestDate": "2024-01-20T18:00:00Z",
+      "endDate": "2024-04-25T18:00:00Z",
+      "destination": "Meknes"
     },
     {
-      "id":4,
-      "name":"rahim",
-      "Creditlimit":1000
+      "id": 12,
+      "userId": 1,
+      "title": "Mission 12",
+      "description": "Healthcare Mission",
+      "state": "REJECTED",
+      "startDate": "2024-05-01T09:30:00Z",
+      "requestDate": "2024-01-20T18:00:00Z",
+      "endDate": "2024-05-05T17:30:00Z",
+      "destination": "Tetouan"
     },
     {
-      "id":5,
-      "name":"robert",
-      "Creditlimit":1000
+      "id": 13,
+      "userId": 1,
+      "title": "Mission 13",
+      "description": "Cultural Mission",
+      "state": "REJECTED",
+      "startDate": "2024-05-10T08:00:00Z",
+      "requestDate": "2024-01-20T18:00:00Z",
+      "endDate": "2024-05-15T18:00:00Z",
+      "destination": "El Jadida"
+    },
+    {
+      "id": 14,
+      "userId": 1,
+      "title": "Mission 14",
+      "description": "Environmental Mission",
+      "state": "REJECTED",
+      "startDate": "2024-05-20T10:00:00Z",
+      "requestDate": "2024-01-20T18:00:00Z",
+      "endDate": "2024-05-25T20:00:00Z",
+      "destination": "Al Hoceima"
+    },
+    {
+      "id": 15,
+      "userId": 1,
+      "title": "Mission 15",
+      "description": "Infrastructure Mission",
+      "state": "REJECTED",
+      "startDate": "2024-06-01T08:30:00Z",
+      "requestDate": "2024-01-20T18:00:00Z",
+      "endDate": "2024-06-05T16:30:00Z",
+      "destination": "Azrou"
+    },
+    {
+      "id": 16,
+      "userId": 1,
+      "title": "Mission 16",
+      "description": "Agricultural Mission",
+      "state": "REJECTED",
+      "startDate": "2024-06-10T09:00:00Z",
+      "requestDate": "2024-01-20T18:00:00Z",
+      "endDate": "2024-06-15T17:00:00Z",
+      "destination": "Bouznika"
+    },
+    {
+      "id": 17,
+      "userId": 1,
+      "title": "Mission 17",
+      "description": "Mission in the Atlas Mountains",
+      "state": "REJECTED",
+      "startDate": "2024-06-20T08:00:00Z",
+      "requestDate": "2024-01-20T18:00:00Z",
+      "endDate": "2024-06-25T18:00:00Z",
+      "destination": "Atlas Mountains"
+    },
+    {
+      "id": 18,
+      "userId": 1,
+      "title": "Mission 18",
+      "description": "Social Mission",
+      "state": "REJECTED",
+      "startDate": "2024-07-01T09:30:00Z",
+      "requestDate": "2024-01-20T18:00:00Z",
+      "endDate": "2024-07-05T17:30:00Z",
+      "destination": "Safi"
+    },
+    {
+      "id": 19,
+      "userId": 1,
+      "title": "Mission 19",
+      "description": "Mission for Innovation",
+      "state": "REJECTED",
+      "startDate": "2024-07-10T08:00:00Z",
+      "requestDate": "2024-01-20T18:00:00Z",
+      "endDate": "2024-07-15T18:00:00Z",
+      "destination": "Dakhla"
+    },
+    {
+      "id": 20,
+      "userId": 1,
+      "title": "Mission 20",
+      "description": "Mission Wrap-up",
+      "state": "REJECTED",
+      "startDate": "2024-07-20T10:00:00Z",
+      "requestDate": "2024-01-20T18:00:00Z",
+      "endDate": "2024-07-25T20:00:00Z",
+      "destination": "Laayoune"
+    },
+    {
+      "id": 21,
+      "userId": 2,
+      "title": "Mission 21",
+      "description": "Mission for the next week",
+      "state": "REJECTED",
+      "startDate": "2024-01-15T08:00:00Z",
+      "requestDate": "2024-01-20T18:00:00Z",
+      "endDate": "2024-01-20T18:00:00Z",
+      "destination": "Agadir"
+    },
+    {
+      "id": 22,
+      "userId": 2,
+      "title": "Mission 22",
+      "description": "Another mission description",
+      "state": "REJECTED",
+      "startDate": "2024-01-21T09:00:00Z",
+      "requestDate": "2024-01-20T18:00:00Z",
+      "endDate": "2024-01-25T17:00:00Z",
+      "destination": "Casablanca"
     }
   ]
 }
